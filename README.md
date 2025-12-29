@@ -51,17 +51,6 @@ cd mealmate
 java -jar target/*-SNAPSHOT.jar
 ```
 
-Konfigürasyon
-- Tüm ortam ayarları `src/main/resources/application.yml` dosyasında bulunur. Veritabanı bağlantısı, port numarası ve JWT ile ilgili anahtarlar burada yapılandırılır.
-
-Güvenlik Notu
-- `pom.xml` içinde `jjwt.version` güvenlik güncellemesi yapılmıştır (0.13.0). Güvenlik tarayıcıları bu sürümü tavsiye eder; üretim ortamında JWT anahtar yönetimi ve gizlilik politikaları dikkatle uygulanmalıdır.
-
-Değerlendirme & Deneysel Prosedür
-- Tez çalışmasında kullanılacak testler, veri setleri ve ölçüm metrikleri `docs/` veya tez raporunda belirtilmelidir. Örnek değerlendirme adımları:
-  - Fonksiyonel doğrulama (API testleri)
-  - Performans testleri (yük testi)
-  - Kullanılabilirlik/anket sonuçları (varsa)
 
 Sorun Giderme
 - Derleme sırasında `bad source file` veya `duplicate class` hataları alıyorsanız, proje kaynak dosyalarındaki `package` bildirimlerinin dosya yoluyla uyumlu olduğundan emin olun (örneğin `src/main/java/com/humeyra/...`). Yanlış `package main.java.com...` gibi önekler derlemeyi engeller.
@@ -76,22 +65,3 @@ Testler
 .\mvnw.cmd test
 ```
 
-Veri Gizliliği
-- Gerçek kullanıcı verisi kullanılıyorsa, kişisel verilerin korunması (anonimizasyon, erişim kontrolleri) sağlanmalıdır. Tez raporunda veri kaynağı ve izinler açıkça belirtilmelidir.
-
-Katkıda Bulunma
-- Akademik projeler için katkılar genellikle danışman onayı ile yapılır. Hata bildirimleri ve PR'lar kabul edilebilir; önce bir issue açmanız rica olunur.
-
-Referanslar
-- Kullanılan kütüphane sürümleri ve güvenlik notları `pom.xml` ve proje dokümantasyonunda listelenmiştir.
-
-İletişim
-- Projeyle ilgili sorular için `README` içine eklenecek e-posta veya GitHub profil bilgileri kullanılabilir.
-
----
-
-Bu README, tez amaçlı belgeleme için temel bir iskelet sağlar; isterseniz tez raporunuzun başlık sayfası, özet (abstract), literatür özeti ve deney sonuçları gibi ek bölümleri ekleyebilirim.
-- `src/main/resources/application.yml` : konfigürasyon
-- `pom.xml` : bağımlılıklar ve build
-
-Sonraki adım: projeyi derleyip çalıştırarak değişiklikleri (özellikle `jjwt` güncellemesi ve paket düzeltmeleri) doğrulayın.
